@@ -5,6 +5,7 @@
     <About />
     <Skills />
     <Guestbook />
+    <Gallery />
     <FooterSection />
   </div>
 </template>
@@ -15,6 +16,7 @@ import Hero          from './components/Hero.vue'
 import About         from './components/About.vue'
 import Skills        from './components/Skills.vue'
 import Guestbook     from './components/Guestbook.vue'
+import Gallery       from './components/Gallery.vue'
 import FooterSection from './components/FooterSection.vue'
 
 export default {
@@ -25,6 +27,7 @@ export default {
     About,
     Skills,
     Guestbook,
+    Gallery,
     FooterSection,
   }
 }
