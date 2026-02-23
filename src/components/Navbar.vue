@@ -29,10 +29,11 @@ export default {
       isScrolled: false,
       menuOpen: false,
       links: [
-        { href: "#hero",       num: "01", label: "Home"      },
-        { href: "#about",      num: "02", label: "Bio"       },
-        { href: "#skills",     num: "03", label: "Tracks"    },
-        { href: "#guestbook",  num: "04", label: "Guestbook" },
+        { href: "#hero",      num: "01", label: "Home"      },
+        { href: "#about",     num: "02", label: "Bio"       },
+        { href: "#skills",    num: "03", label: "Tracks"    },
+        { href: "#guestbook", num: "04", label: "Guestbook" },
+        { href: "#gallery",   num: "05", label: "Gallery"   },
       ]
     }
   },
@@ -91,7 +92,7 @@ export default {
 
 @keyframes pulse {
   0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.3); opacity: 0.7; }
+  50%       { transform: scale(1.3); opacity: 0.7; }
 }
 
 .brand-text {
@@ -107,7 +108,7 @@ export default {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 36px;
   margin: 0; padding: 0;
 }
 
@@ -185,7 +186,6 @@ export default {
   }
 
   .nav-links.open { right: 0; }
-
   .nav-links a { font-size: 1.1rem; }
 }
 </style>
