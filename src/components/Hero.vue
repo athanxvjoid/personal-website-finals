@@ -1,11 +1,9 @@
 <template>
   <section id="hero" class="hero">
-    <!-- Ambient background orbs -->
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
 
-    <!-- Vinyl record bars (music visualizer) -->
     <div class="visualizer">
       <span v-for="n in 24" :key="n" class="bar" :style="{ animationDelay: `${n * 0.08}s` }"></span>
     </div>
@@ -51,7 +49,6 @@
       </div>
     </div>
 
-    <!-- Scroll cue -->
     <div class="scroll-cue">
       <span>scroll</span>
       <div class="scroll-line"></div>
@@ -124,7 +121,7 @@ export default {
   to   { transform: translate(40px, 30px); }
 }
 
-/* --- Music visualizer --- */
+/* --- Visualizer --- */
 .visualizer {
   position: absolute;
   bottom: 60px; left: 50%;
@@ -162,6 +159,7 @@ export default {
 /* --- Text side --- */
 .hero-text {
   flex: 1;
+  min-width: 0;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.9s cubic-bezier(0.16,1,0.3,1);
@@ -188,10 +186,11 @@ export default {
   background: #1DB954;
   animation: blink 1.5s ease-in-out infinite;
   box-shadow: 0 0 8px #1DB954;
+  flex-shrink: 0;
 }
 @keyframes blink {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+  50%       { opacity: 0.3; }
 }
 
 .name {
@@ -202,13 +201,13 @@ export default {
 }
 .name-first {
   display: block;
-  font-size: clamp(3rem, 7vw, 6rem);
+  font-size: clamp(2.8rem, 6vw, 6rem);
   color: #fff;
   letter-spacing: -2px;
 }
 .name-last {
   display: block;
-  font-size: clamp(3rem, 7vw, 6rem);
+  font-size: clamp(2.8rem, 6vw, 6rem);
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(255,255,255,0.3);
   letter-spacing: -2px;
@@ -287,9 +286,11 @@ export default {
   transform: translateX(0);
 }
 
+/* Vinyl wrapper scales naturally with clamp */
 .vinyl-wrapper {
   position: relative;
-  width: 340px; height: 340px;
+  width: clamp(220px, 28vw, 340px);
+  height: clamp(220px, 28vw, 340px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -301,9 +302,10 @@ export default {
   border: 1px solid rgba(29,185,84,0.15);
   animation: rotate-ring 20s linear infinite;
 }
-.ring-1 { width: 340px; height: 340px; animation-duration: 20s; }
-.ring-2 { width: 290px; height: 290px; animation-duration: 30s; animation-direction: reverse; }
-.ring-3 { width: 380px; height: 380px; border-color: rgba(29,185,84,0.07); animation-duration: 40s; }
+/* Rings scale relative to wrapper via percentages */
+.ring-1 { width: 100%;    height: 100%;    animation-duration: 20s; }
+.ring-2 { width: 85%;     height: 85%;     animation-duration: 30s; animation-direction: reverse; }
+.ring-3 { width: 112%;    height: 112%;    border-color: rgba(29,185,84,0.07); animation-duration: 40s; }
 
 @keyframes rotate-ring {
   from { transform: rotate(0deg); }
@@ -311,16 +313,19 @@ export default {
 }
 
 .vinyl-photo {
-  width: 250px; height: 250px;
+  width: 74%;
+  height: 74%;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center top;
   border: 4px solid #1a1a1a;
   box-shadow:
     0 0 0 8px rgba(29,185,84,0.08),
     0 0 60px rgba(29,185,84,0.25),
     0 20px 60px rgba(0,0,0,0.8);
   transition: all 0.5s ease;
-  position: relative; z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 .vinyl-photo.spinning {
   animation: spin 8s linear infinite;
@@ -332,7 +337,7 @@ export default {
 
 .vinyl-center {
   position: absolute;
-  width: 24px; height: 24px;
+  width: 7%; height: 7%;
   border-radius: 50%;
   background: #1DB954;
   z-index: 3;
@@ -361,24 +366,27 @@ export default {
 }
 @keyframes scroll-anim {
   0%, 100% { opacity: 0.4; transform: scaleY(1); }
-  50% { opacity: 1; transform: scaleY(0.5); }
+  50%       { opacity: 1;   transform: scaleY(0.5); }
 }
 
-/* --- Responsive --- */
+/* --- Tablet --- */
 @media (max-width: 900px) {
   .hero-inner {
     flex-direction: column-reverse;
     text-align: center;
-    gap: 40px;
+    gap: 32px;
   }
-  .name-first, .name-last { font-size: clamp(2.5rem, 10vw, 4rem); }
-  .hero-visual { transform: translateX(0) translateY(-20px); }
+  .hero-visual {
+    transform: none;
+  }
   .actions { justify-content: center; }
-  .vinyl-wrapper { width: 260px; height: 260px; }
-  .vinyl-photo { width: 190px; height: 190px; }
-  .ring-1 { width: 260px; height: 260px; }
-  .ring-2 { width: 220px; height: 220px; }
-  .ring-3 { width: 290px; height: 290px; }
   .scroll-cue { display: none; }
+}
+
+/* --- Mobile --- */
+@media (max-width: 480px) {
+  .hero {
+    padding: 90px 24px 70px;
+  }
 }
 </style>
