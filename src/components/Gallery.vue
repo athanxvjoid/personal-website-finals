@@ -103,68 +103,32 @@ export default {
       // span  → grid size: 1 = normal, 2 = wide, 3 = tall-wide (use sparingly)
       // ─────────────────────────────────────────────
       photos: [
-        {
-          id: 1,
-          src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-          caption: "Your caption here",
-          tag: "Places",
-          span: 2,
-        },
-        {
-          id: 2,
-          src: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80",
-          caption: "Your caption here",
-          tag: "Places",
-          span: 1,
-        },
-        {
-          id: 3,
-          src: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&q=80",
-          caption: "Your caption here",
-          tag: "People",
-          span: 1,
-        },
-        {
-          id: 4,
-          src: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800&q=80",
-          caption: "Your caption here",
-          tag: "Places",
-          span: 1,
-        },
-        {
-          id: 5,
-          src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
-          caption: "Your caption here",
-          tag: "People",
-          span: 2,
-        },
-        {
-          id: 6,
-          src: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=80",
-          caption: "Your caption here",
-          tag: "Moments",
-          span: 1,
-        },
-        {
-          id: 7,
-          src: "https://images.unsplash.com/photo-1490750967868-88df5691cc06?w=600&q=80",
-          caption: "Your caption here",
-          tag: "Moments",
-          span: 1,
-        },
-        {
-          id: 8,
-          src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-          caption: "Your caption here",
-          tag: "Places",
-          span: 1,
-        },
+        // ── aespa ──
+        { id: 1,  src: "/photos/karina1.jpg",  caption: "Karina — aespa",   tag: "aespa",       span: 2 },
+        { id: 2,  src: "/photos/karina2.jpg",  caption: "Karina — aespa",   tag: "aespa",       span: 1 },
+        { id: 3,  src: "/photos/karina3.jpg",  caption: "Karina — aespa",   tag: "aespa",       span: 1 },
+        { id: 4,  src: "/photos/winter1.jpg",  caption: "Winter — aespa",   tag: "aespa",       span: 1 },
+        { id: 5,  src: "/photos/winter2.jpg",  caption: "Winter — aespa",   tag: "aespa",       span: 2 },
+        { id: 6,  src: "/photos/winter3.jpg",  caption: "Winter — aespa",   tag: "aespa",       span: 1 },
+
+        // ── Le Sserafim ──
+        { id: 7,  src: "/photos/yunjin1.jpg",  caption: "Yunjin — Le Sserafim",  tag: "Le Sserafim", span: 1 },
+        { id: 8,  src: "/photos/yunjin2.jpg",  caption: "Yunjin — Le Sserafim",  tag: "Le Sserafim", span: 2 },
+        { id: 9,  src: "/photos/yunjin3.jpg",  caption: "Yunjin — Le Sserafim",  tag: "Le Sserafim", span: 1 },
+        { id: 10, src: "/photos/chaewon1.jpg", caption: "Chaewon — Le Sserafim", tag: "Le Sserafim", span: 1 },
+        { id: 11, src: "/photos/chaewon2.jpg", caption: "Chaewon — Le Sserafim", tag: "Le Sserafim", span: 1 },
+        { id: 12, src: "/photos/chaewon3.jpg", caption: "Chaewon — Le Sserafim", tag: "Le Sserafim", span: 2 },
+
+        // ── IVE ──
+        { id: 13, src: "/photos/liz1.jpg",     caption: "Liz — IVE",        tag: "IVE",         span: 2 },
+        { id: 14, src: "/photos/liz2.jpg",     caption: "Liz — IVE",        tag: "IVE",         span: 1 },
+        { id: 15, src: "/photos/liz3.jpg",     caption: "Liz — IVE",        tag: "IVE",         span: 1 },
+        { id: 16, src: "/photos/won1.jpg",     caption: "Wonyoung — IVE",   tag: "IVE",         span: 1 },
+        { id: 17, src: "/photos/won2.jpg",     caption: "Wonyoung — IVE",   tag: "IVE",         span: 1 },
+        { id: 18, src: "/photos/won3.jpg",     caption: "Wonyoung — IVE",   tag: "IVE",         span: 2 },
       ],
 
-      // ─────────────────────────────────────────────
-      // ADD / RENAME YOUR TAGS HERE (keep "All")
-      // ─────────────────────────────────────────────
-      tags: ["All", "Places", "People", "Moments"],
+      tags: ["All", "aespa", "Le Sserafim", "IVE"],
     };
   },
 
