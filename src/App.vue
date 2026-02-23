@@ -39,6 +39,11 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
 body {
   background-color: #080808;
   color: #ffffff;
